@@ -1,6 +1,7 @@
 import requests
 import pprint
 from bs4 import BeautifulSoup
+import random
 
 class Generator:
     def getNames():
@@ -27,8 +28,24 @@ class Generator:
         names.append("Issy Metcalf")
         names.append("Scott Squires")
 
-        print(names)
-        print(len(names))
+        return names
+
+    def randomizer(names):
+        numbers = []
+        randomNames = []
+        while len(numbers) < len(names):
+            randomNumber = random.randint(0,len(names)-1)
+            if randomNumber not in numbers: 
+                numbers.append(randomNumber)
+                randomNames.append(names[randomNumber])
+        
+        return randomNames
+
+    def cuddleCreator(randomNames):
+        groupNumber = 1
+        for i in range(0,len(randomNames),4):
+            print("Group ", groupNumber, ': ', randomNames[i:i+4])
+            groupNumber+=1
 
     if __name__ == "__main__":
-        getNames()
+        cuddleCreator(randomizer(getNames()))
