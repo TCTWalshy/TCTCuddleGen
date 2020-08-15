@@ -7,12 +7,9 @@ class Generator:
     def getNames():
         url = "https://www.theconfigteam.co.uk/meet-the-config-team"
         page = requests.get(url)
-        pp = pprint.PrettyPrinter(depth=6)
 
         soup = BeautifulSoup(page.content, 'html.parser')
-
         results = soup.find(id="block-system-main")
-
         rows = results.find_all('span', class_='field-content')
 
         names = []
