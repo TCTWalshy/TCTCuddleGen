@@ -36,4 +36,3 @@ class Generator:
 
     if __name__ == "__main__":
         test(getNames())
-        #cuddleCreator(randomizer(getNames()))
