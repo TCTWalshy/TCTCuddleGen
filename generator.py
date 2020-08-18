@@ -27,7 +27,7 @@ class Generator:
 
         return names
 
-    def test(names):
+    def shuffleNames(names):
         random.shuffle(names);
         groupNumber = 1
         for i in range(0,len(names),4):
@@ -35,4 +35,4 @@ class Generator:
             groupNumber+=1
 
     if __name__ == "__main__":
-        test(getNames())
+        shuffleNames(getNames())
