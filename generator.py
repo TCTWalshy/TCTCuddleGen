@@ -27,22 +27,13 @@ class Generator:
 
         return names
 
-    def randomizer(names):
-        numbers = []
-        randomNames = []
-        while len(numbers) < len(names):
-            randomNumber = random.randint(0,len(names)-1)
-            if randomNumber not in numbers: 
-                numbers.append(randomNumber)
-                randomNames.append(names[randomNumber])
-        
-        return randomNames
-
-    def cuddleCreator(randomNames):
+    def test(names):
+        random.shuffle(names);
         groupNumber = 1
-        for i in range(0,len(randomNames),4):
-            print("Group ", groupNumber, ': ', randomNames[i:i+4])
+        for i in range(0,len(names),4):
+            print("Group ", groupNumber, ': ', names[i:i+4])
             groupNumber+=1
 
     if __name__ == "__main__":
-        cuddleCreator(randomizer(getNames()))
+        test(getNames())
+        #cuddleCreator(randomizer(getNames()))
